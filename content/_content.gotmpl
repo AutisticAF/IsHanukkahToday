@@ -1,0 +1,13 @@
+{{ $content := dict
+	"mediaType" "text/markdown"
+	"value" "# Hello, world!"
+}}
+
+{{ $page := dict
+	"content" $content
+	"kind" "home"
+	"path" "_index"
+	"title" "Hello?"
+}}
+
+{{ .AddPage $page }}

@@ -1,0 +1,19 @@
+yes = 'Yes!'
+no = 'No.'
+
+todayIsThe = 'Today is the {{ i18n "{{ . }}" }} day of Hanukkah.'
+hanukkahStartsOn = 'Hanukkah starts on {{ . | time.Format ":date_full"}}.'
+hanukkahEndedOn = 'Hanukkah ended on {{ . | time.Format ":date_full"}}.'
+
+first = 'first'
+second = 'second'
+third = 'third'
+fourth = 'fourth'
+fifth = 'fifth'
+sixth = 'sixth'
+seventh = 'seventh'
+eighth = 'eighth'
+
+madeWith = 'Made with love {{ . }} by Alex Karp {{ .Site.Data.blueskyLink }}.'
+copyright = '&copy; 2020 – {{ Time.now | .Year }}. All rights reserved.'
+donation = 'Please consider donating to a Palestinian relief organization, like [PCRF](https://www.pcrf.net/) or [Palestine Red Crescent](https://www.palestinercs.org/en).'

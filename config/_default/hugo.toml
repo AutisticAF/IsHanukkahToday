@@ -1,0 +1,5 @@
+baseURL = 'https://ishanukkah.today/'
+languageCode = 'en'
+title = 'Is Hanukkah Today?'
+theme = 'Hanukkah'
+defaultContentLanguage = 'en'
