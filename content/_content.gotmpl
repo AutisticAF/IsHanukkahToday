@@ -1,13 +1,48 @@
-{{ $content := dict
-	"mediaType" "text/markdown"
-	"value" "# Hello, world!"
-}}
-
-{{ $page := dict
-	"content" $content
+{{ $pageContent := dict }}
+{{ $page := dict 
 	"kind" "home"
 	"path" "_index"
-	"title" "Hello?"
+	"title" "Home"
 }}
+
+{{ $params := dict }}
+
+{{ $TimeLayoutYear := "2006" }}
+{{ $TimeLayoutISO := "2006-01-02" }}
+
+{{ $hebrewYearBaseUrl := "https://www.hebcal.com/converter?cfg=json&gm=11&gd=15g2h=1&strict=1" }}
+{{ $thisYear := time.Now | time.Format $TimeLayoutYear }}
+{{ $hebrewYearFullUrl := delimit (slice $hebrewYearBaseUrl "&gy=" $thisYear) "" }}
+
+{{ $hebrewYearResponse := resources.GetRemote $hebrewYearFullUrl | transform.Unmarshal }}
+{{ $hebrewYear := $hebrewYearResponse.hy }}
+
+{{ $eventsBaseUrl := "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&yt=H" }}
+{{ $eventsFullUrl := delimit (slice $eventsBaseUrl "&year=" $hebrewYear) "" }}
+
+{{ $response := resources.GetRemote $eventsFullUrl | transform.Unmarshal }}
+
+{{ $dayOfHanukkahFound := false }}
+{{ range $i, $value := where $response.items "title" "like" "^Chanukah.*$" }}
+	{{ with $value.date | time.AsTime }}
+		{{ if and (lt time.Now .) (eq $dayOfHanukkahFound false) }}
+			{{ $params = merge $params (dict "dayOfHanukkah" (sub $i 1)) }}
+			{{ $dayOfHanukkahFound = true }}
+		{{ end }}
+
+		{{ if eq $i 0 }}
+			{{ $params = merge $params (dict "startDate" $value.date) }}
+		{{ else if eq $i 8 }}
+			{{ $params = merge $params (dict "endDate" $value.date) }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+{{ $content := dict
+	"mediaType" "text/markdown"
+	"value" ""
+}}
+
+{{ $page = merge $page (dict "content" $content "params" $params) }}
 
 {{ .AddPage $page }}
