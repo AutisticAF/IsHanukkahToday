@@ -5,3 +5,5 @@ theme/Hanukkah/public/
 yarn.lock
 .hugo_build.lock
 .vscode/
+bin/
+/package-lock.json

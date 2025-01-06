@@ -1,0 +1,39 @@
+{
+	"name": "is-hanukkah-today-website",
+	"version": "1.0.0",
+	"description": "The Hugo generator for ishanukkah.today",
+	"main": "",
+	"author": "Alex Karp",
+	"license": "MIT",
+	"private": true,
+	"config": {
+		"hugo": "0.140.2"
+	},
+	"devDependencies": {
+		"@tailwindcss/cli": "^4.0.0-beta.8",
+		"@tailwindcss/postcss": "^4.0.0-beta.8",
+		"@types/semver": "^7.5.8",
+		"exec-bin": "^1.0.0",
+		"htmltidy2": "^1.2.0",
+		"hugo-installer": "^4.0.1",
+		"lint-staged": "^15.3.0",
+		"npm-watch": "^0.13.0",
+		"path": "^0.12.7",
+		"postcss": "^8.4.49",
+		"prettier": "^3.4.2",
+		"semver": "^7.6.3",
+		"tailwindcss": "^4.0.0-beta.8"
+	},
+	"overrides": {
+		"semver": "^7.6.3"
+	},
+	"scripts": {
+		"build": "yarn run build:js && yarn run build:css && yarn run build:hugo",
+		"build:css": "gulp run css",
+		"build:js": "gulp run js",
+		"build:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --theme Hanukkah --config config/_default/hugo.toml -e production -d public && node tidier.js",
+		"build:hugo:dev": "npm run install:hugo && exec-bin bin/hugo/hugo server --theme Hanukkah --config config/_default/hugo.toml -e development",
+		"install:hugo": "hugo-installer --version $npm_package_config_hugo --extended",
+		"tidy:html": "node tidier.js"
+	}
+}

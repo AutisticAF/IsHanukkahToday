@@ -1,9 +1,18 @@
+{{ $buildOpts := dict 
+	"list" "never"
+	"publishResources" false
+	"render" "never"
+}}
 {{ $pageContent := dict }}
 {{ $page := dict 
 	"kind" "home"
-	"path" "_index"
+	"path" "headless"
 	"title" "Home"
+	"layout" "home"
+	"build" $buildOpts
 }}
+
+{{ $ordinalDays := slice "first" "second" "third" "fourth" "fifth" "sixth" "seventh" "eighth" }}
 
 {{ $params := dict }}
 
@@ -26,21 +35,44 @@
 {{ range $i, $value := where $response.items "title" "like" "^Chanukah.*$" }}
 	{{ with $value.date | time.AsTime }}
 		{{ if and (lt time.Now .) (eq $dayOfHanukkahFound false) }}
-			{{ $params = merge $params (dict "dayOfHanukkah" (sub $i 1)) }}
+			{{ $params = merge $params (dict "dayOfHanukkah" $i) }}
+			
+			{{ if gt $i 0 }}
+				{{ $moreParams := dict
+					"isHanukkah" true
+					"ordinalDay" (collections.Index $ordinalDays (sub $i 1))
+				}}
+				{{ $params = merge $params $moreParams }}
+			{{ else }}
+				{{ $moreParams := dict
+					"isHanukkah" false
+					"isBefore" true
+				}}
+				{{ $params = merge $params $moreParams }}
+			{{ end }}
+
 			{{ $dayOfHanukkahFound = true }}
 		{{ end }}
 
 		{{ if eq $i 0 }}
-			{{ $params = merge $params (dict "startDate" $value.date) }}
+			{{ $params = merge $params (dict "startDate" ($value.date | time.Format ":date_full")) }}
 		{{ else if eq $i 8 }}
-			{{ $params = merge $params (dict "endDate" $value.date) }}
+			{{ $params = merge $params (dict "endDate" ($value.date | time.Format ":date_full")) }}
 		{{ end }}
 	{{ end }}
 {{ end }}
 
+{{ if ne $dayOfHanukkahFound true }}
+	{{ $moreParams := dict
+		"isHanukkah" false
+		"isBefore" false
+	}}
+	{{ $params = merge $params $moreParams }}
+{{ end }}
+
 {{ $content := dict
 	"mediaType" "text/markdown"
-	"value" ""
+	"value" "Hello?"
 }}
 
 {{ $page = merge $page (dict "content" $content "params" $params) }}

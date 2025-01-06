@@ -1,0 +1,3 @@
+[[build.cachebusters]]
+	source = 'themes/Hanukkah/layouts/.*'
+	target = 'css'

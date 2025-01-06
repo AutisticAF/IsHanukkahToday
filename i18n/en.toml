@@ -1,9 +1,9 @@
 yes = 'Yes!'
 no = 'No.'
 
-todayIsThe = 'Today is the {{ i18n "{{ . }}" }} day of Hanukkah.'
-hanukkahStartsOn = 'Hanukkah starts on {{ . | time.Format ":date_full"}}.'
-hanukkahEndedOn = 'Hanukkah ended on {{ . | time.Format ":date_full"}}.'
+todayIsThe = 'Today is the {{ lang.Translate "{{ . }}" }} day of Hanukkah.'
+hanukkahStartsOn = 'Hanukkah starts on {{ . }}.'
+hanukkahEndedOn = 'Hanukkah ended on {{ . }}.'
 
 first = 'first'
 second = 'second'
