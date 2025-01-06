@@ -12,8 +12,13 @@
 	"overrides": {
 		"semver": "^7.6.3"
 	},
+	"engines": {
+		"node": "22.x",
+		"npm": "11.x"
+	},
 	"scripts": {
-		"build": "npm run build:hugo && npx @tailwindcss/cli -i themes/Hanukkah/assets/css/main.css -o public/css/main.css",
+		"build": "npm run build:hugo",
+		"postbuild": "npx @tailwindcss/cli -i themes/Hanukkah/assets/css/main.css -o public/css/main.css",
 		"build:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --theme Hanukkah --config config/_default/hugo.toml -e production -d public && node tidier.js",
 		"build:hugo:dev": "npm run install:hugo && exec-bin bin/hugo/hugo server --theme Hanukkah --config config/_default/hugo.toml -e development",
 		"install:hugo": "hugo-installer --version $npm_package_config_hugo --extended",
