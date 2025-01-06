@@ -18,14 +18,13 @@
 	},
 	"scripts": {
 		"build": "npm run build:hugo",
-		"postbuild": "npx @tailwindcss/cli -i themes/Hanukkah/assets/css/main.css -o public/css/main.css",
+		"postbuild": "npx tailwindcss/cli -i themes/Hanukkah/assets/tailwind-css/main.css -o public/css/main.css",
 		"build:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --theme Hanukkah --config config/_default/hugo.toml -e production -d public && node tidier.js",
 		"build:hugo:dev": "npm run install:hugo && exec-bin bin/hugo/hugo server --theme Hanukkah --config config/_default/hugo.toml -e development",
 		"install:hugo": "hugo-installer --version $npm_package_config_hugo --extended",
 		"tidy:html": "node tidier.js"
 	},
 	"dependencies": {
-		"@tailwindcss/cli": "^4.0.0-beta.8",
 		"@types/semver": "^7.5.8",
 		"exec-bin": "^1.0.0",
 		"htmltidy2": "^1.2.0",
@@ -36,6 +35,7 @@
 		"postcss": "^8.4.49",
 		"prettier": "^3.4.2",
 		"semver": "^7.6.3",
-		"tailwindcss": "^4.0.0-beta.8"
+		"tailwindcss": "^4.0.0-beta.8",
+		"@tailwindcss/oxide-linux-x64-gnu": "4.0.0-beta.8"
 	}
 }
