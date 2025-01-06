@@ -1,0 +1,19 @@
+yes = '¡Si!'
+no = 'No.'
+
+todayIsThe = 'Hoy es el {{ lang.Translate "{{ . }}" }} día de Janucá.'
+hanukkahStartsOn = 'Janucá empieza el {{ . }}.'
+hanukkahEndedOn = 'Janucá terminó el {{ . }}.'
+
+first = 'primer'
+second = 'segundo'
+third = 'tercer'
+fourth = 'quarto'
+fifth = 'quinto'
+sixth = 'sexto'
+seventh = 'septimo'
+eighth = 'octavo'
+
+madeWith = 'Hecho con amor {{ . }} por Alex Karp {{ .Site.Data.blueskyLink }}.'
+copyright = '&copy; 2020 – {{ Time.now | .Year }}. Reservados todos los derechos.'
+donation = 'Por favor, considere hacer una donación a una organización de ayuda Palestina, como [PCRF](https://www.pcrf.net/) o [Cresciente Rojo Palestino](https://www.palestinercs.org/en).'

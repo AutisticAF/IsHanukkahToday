@@ -1,0 +1,5 @@
+contentDir = 'content'
+languageCode = 'es-mx'
+languageDirection = 'ltr'
+languageName = 'Español'
+title = '¿Es Janucá Hoy?'
