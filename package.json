@@ -9,9 +9,18 @@
 	"config": {
 		"hugo": "0.140.2"
 	},
-	"devDependencies": {
+	"overrides": {
+		"semver": "^7.6.3"
+	},
+	"scripts": {
+		"build": "npm run build:hugo",
+		"build:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --theme Hanukkah --config config/_default/hugo.toml -e production -d public && node tidier.js",
+		"build:hugo:dev": "npm run install:hugo && exec-bin bin/hugo/hugo server --theme Hanukkah --config config/_default/hugo.toml -e development",
+		"install:hugo": "hugo-installer --version $npm_package_config_hugo --extended",
+		"tidy:html": "node tidier.js"
+	},
+	"dependencies": {
 		"@tailwindcss/cli": "^4.0.0-beta.8",
-		"@tailwindcss/postcss": "^4.0.0-beta.8",
 		"@types/semver": "^7.5.8",
 		"exec-bin": "^1.0.0",
 		"htmltidy2": "^1.2.0",
@@ -23,15 +32,5 @@
 		"prettier": "^3.4.2",
 		"semver": "^7.6.3",
 		"tailwindcss": "^4.0.0-beta.8"
-	},
-	"overrides": {
-		"semver": "^7.6.3"
-	},
-	"scripts": {
-		"build": "npm run build:hugo",
-		"build:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --theme Hanukkah --config config/_default/hugo.toml -e production -d public && node tidier.js",
-		"build:hugo:dev": "npm run install:hugo && exec-bin bin/hugo/hugo server --theme Hanukkah --config config/_default/hugo.toml -e development",
-		"install:hugo": "hugo-installer --version $npm_package_config_hugo --extended",
-		"tidy:html": "node tidier.js"
 	}
 }
