@@ -1,3 +1,5 @@
 ogImage = "/og-image.png"
 favicon = "/favicon.svg"
 description = "Is it Hanukkah today? Find out instantly with our simple tool that lets you know if today is part of the Festival of Lights. Perfect for quick checks, holiday planning, and celebrating the season. Bookmark now for easy access!"
+heartIcon = '<i class="fa-sharp-duotone fa-regular fa-heart" style="--fa-primary-color: #ff0000; --fa-secondary-color: #ff0000;"></i>'
+BlueskyLink = '[\(@autistic.af\)](https://bsky.app/profile/autistic.af)'
