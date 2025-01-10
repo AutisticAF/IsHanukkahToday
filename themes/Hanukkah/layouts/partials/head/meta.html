@@ -25,6 +25,10 @@
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
 {{ end }}
 
+<meta property="og:article:author" content="Alex Karp" />
+<meta property="article:author" content="Alex Karp" />
+<meta name="author" content="Alex Karp" />
+
 {{ with .Params.image }}
   <meta itemprop="image" content="{{ . | absURL }}" />
   <meta property="og:image" content="{{ . | absURL }}" />
