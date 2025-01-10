@@ -9,7 +9,9 @@
   <footer class="grow-0 shrink-0 basis-1/3 flex flex-col *:w-screen *:max-w-full text-center max-h-fit *:min-h-fit max-w-5/6">
     {{ partial "footer.html" . }}
   </footer>
+  {{ if eq hugo.Environment "development" }}
   <aside id="breakpoint-overlay" class="fixed bottom-4 right-4 dark:bg-midnight-green light:bg-eggplant dark:text-antique-white light:text-lemon-chiffon p-4 grid grid-cols-3 text-center items-baseline gap-x-8 rounded-full font-display shadow-2xl"><div id="breakpoint" class="text-2xl font-black col-span-3">Test</div><div id="prev-boundary" class="pl-4 text-md font-bold">39</div><div id="current-width" class="text-xl">0</div><div id="next-boundary" class="pe-4 font-bold">39</div></aside>
+  {{ end }}
 </div>
 </body>
 </html>

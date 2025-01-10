@@ -12,7 +12,7 @@ class Breakpoint {
 	}
 
 	get mediaQuery(): string {
-		const queryString = "";//"not all and ";
+		const queryString = "";
 		console.log(this.maxSize);
 		const minString = (this.minSize === '0') ? "": "(min-width: " + this.minSize + ")";
 		const maxString = (this.maxSize === '0') ? "": "(max-width: " + this.maxSize + ")";
