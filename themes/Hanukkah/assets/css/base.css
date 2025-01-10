@@ -8,7 +8,7 @@
 	}
 
 	h1 {
-		@apply text-5xl font-black my-12;
+		@apply text-5xl font-[1000] my-12;
 	}
 
 	h2 {

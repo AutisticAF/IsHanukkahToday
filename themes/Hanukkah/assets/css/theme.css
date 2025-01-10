@@ -35,6 +35,6 @@
 	--breakpoint-4xl: 144rem;
 	--breakpoint-5xl: 176rem;
 
-	--font-display: "museo-sans", sans-serif;
+	--font-display: "museo-sans-rounded", sans-serif;
 	--font-serif: "museo-slab", serif;
 }
