@@ -1,4 +1,5 @@
 {{ define "main" }}
+    <main class="max-h-3/4 shrink flex flex-col *:max-w-full *:w-screen max-w-5/6">
     {{ partial "menorah" . }}
     {{ with .Site.GetPage "/headless" }}
     <div class="shrink-0 grow-0 text-center">
@@ -9,7 +10,7 @@
                 {{ lang.Translate "no" }}
             {{ end }}
         </h1>
-        <p class="text-2xl">
+        <p class="text-2xl text-center">
         {{ if .Params.isHanukkah }}
             {{ lang.Translate "todayIsThe" .Params.ordinalDay }}
         {{ else }}
@@ -22,4 +23,5 @@
         </p>
     </div>
     {{ end }}
+    </main>
 {{ end }}

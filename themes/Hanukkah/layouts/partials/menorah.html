@@ -1,5 +1,7 @@
 {{ with .Site.GetPage "/headless" }}
-<svg class="w-auto mx-auto" viewBox="0 0 1143 1281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;">
+{{ $candleFlamesLabel := ( cond (ge .Params.dayOfHanukkah 1) (lang.Translate "candleFlamesLabel") "" )}}
+{{ $menorahAriaLabel := (delimit (slice (lang.Translate "menorahLabel" .Params.dayOfHanukkah) $candleFlamesLabel) " ")}}
+<svg class="w-auto mx-auto" viewBox="0 0 1143 1281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;" aria-label="{{ $menorahAriaLabel }}">
 	<g id="Artboard1" transform="matrix(1,0,0,1,-435.064,-235.804)">
 		<rect x="435.064" y="235.804" width="1142.43" height="1280" style="fill:none;"/>
 		{{ if ge .Params.dayOfHanukkah 8 }}

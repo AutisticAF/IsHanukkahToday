@@ -21,3 +21,13 @@ donation = 'Please consider donating to a Palestinian relief organization, like'
 pcrf = 'PCRF'
 redCrescent = 'Palestine Red Crescent'
 or = 'or'
+accessibilityStatement = 'Accessibility Statement'
+
+candleFlamesLabel = 'The candle flames are mildly animated.'
+
+viewOur = 'View our'
+
+[menorahLabel]
+	zero = 'Flat illustration of a menorah without any candles.'
+	one = 'Flat illustration of a menorah with {{ . }} candle lit.'
+	other = 'Flat illustration of a menorah with {{ . }} candles lit.'

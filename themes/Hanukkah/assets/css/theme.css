@@ -1,0 +1,40 @@
+@theme {
+	--color-english-violet: oklch(37.76% 0.0738 324.5);
+    --color-rose-quartz: oklch(82.78% 0.0642 353.18);
+    --color-antique-white: oklch(95.76% 0.0311 70.53);
+    --color-raspberry-rose: oklch(50.79% 0.1474 1.26);
+	--color-mimi-pink: oklch(88.93% 0.0411 350.49);
+	--color-hunyadi-yellow: oklch(77.74% 0.1458 78.99);
+
+    --color-lemon-chiffon: oklch(95.6% 0.0651 98.98);
+    --color-black: oklch(0% 0 0);
+    --color-midnight-green: oklch(41.66% 0.0578 206.86);
+    --color-eggplant: oklch(33.39% 0.0489 342.96);
+
+    --color-flame-normal: oklch(97.21% 0.0658 101.01);
+	--color-flame-light: oklch(79.27% 0.1709 70.67);
+
+	--color-primary: var(--color-english-violet);
+
+	--flame-1-delay: 0;
+	--flame-2-delay: 0.2;
+	--flame-3-delay: 0.4;
+	--flame-5-delay: 0.25;
+	--flame-6-delay: 0.2;
+	--flame-7-delay: 0.7;
+	--flame-8-delay: 0.25;
+	--flame-shamash-delay: 0.1;
+
+	--wind-left: -10deg;
+	--wind-right: 10deg;
+	--font-text-base: 24px;
+
+	--menorah: 3 / span 10;
+
+	--breakpoint-3xl: 112rem;
+	--breakpoint-4xl: 144rem;
+	--breakpoint-5xl: 176rem;
+
+	--font-display: "museo-sans", sans-serif;
+	--font-serif: "museo-slab", serif;
+}

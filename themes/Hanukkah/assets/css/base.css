@@ -1,0 +1,49 @@
+@layer base {
+	html, body {
+		@apply font-serif light:subpixel-antialiased dark:antialiased;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply light:text-midnight-green dark:text-antique-white font-display;
+	}
+
+	h1 {
+		@apply text-5xl font-black my-12;
+	}
+
+	h2 {
+		@apply text-3xl font-extrabold mt-10 mb-4;
+	}
+
+	h3 {
+		@apply text-3xl font-bold mt-8 mb-4;
+	}
+
+	h4 {
+		@apply text-2xl font-semibold mt-6 mb-4;
+	}
+
+	h5 {
+		@apply text-xl font-medium mt-4 mb-4;
+	}
+
+	h6 {
+		@apply text-lg font-normal mt-3 mb-3;
+	}
+
+	p {
+		@apply my-3 text-justify font-light;
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	li {
+		@apply font-light text-justify my-2;
+	}
+
+	a.back-link {
+		@apply block fixed top-3 left-3;
+	}
+}

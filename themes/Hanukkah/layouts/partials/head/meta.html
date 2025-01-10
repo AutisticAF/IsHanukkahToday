@@ -37,7 +37,7 @@
   <meta name="twitter:image:src" content="{{ .Site.Params.ogImage | absURL }}" />
 {{ end }}
 
-<meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+<meta property="og:updated_time" content={{ time.Now | time.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='{{ "sitemap.xml" | absURL }}' />
 

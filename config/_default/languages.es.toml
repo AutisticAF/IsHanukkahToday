@@ -1,5 +1,5 @@
 contentDir = 'content'
-languageCode = 'es-mx'
+languageCode = 'es'
 languageDirection = 'ltr'
 languageName = 'Español'
 title = '¿Es Janucá Hoy?'

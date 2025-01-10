@@ -1,4 +1,4 @@
-{{- with resources.Get "js/main.js" }}
+{{- range resources.Match "js/*.ts" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
@@ -11,7 +11,7 @@
   {{- end }}
 {{- end }}
 
-{{- with resources.GetRemote "https://kit.fontawesome.com/121b8d1f03.js" }}
+{{- with resources.GetRemote "https://kit.fontawesome.com/121b8d1f03.js" | resources.Copy "js/121b8d1f03.js" }}
   {{- if eq hugo.Environment "development" }}
       <script src="{{ .RelPermalink }}"></script>
   {{- else }}

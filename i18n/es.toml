@@ -21,3 +21,13 @@ donation = 'Por favor, considere hacer una donación a una organización de ayud
 pcrf = 'PCRF'
 redCrescent = 'Cresciente Rojo Palestino'
 or = 'o'
+accessibilityStatement = 'Declaración de Accesibilidad'
+
+candleFlamesLabel = 'Las llamas de las velas están ligeramente animadas.'
+
+viewOur = 'Vea nuestro'
+
+[menorahLabel]
+	zero = 'Ilustración de una menorá sin ninguna vela.'
+	one = 'Ilustración de una menorá con {{ . }} vela encendida.'
+	other = 'Ilustración de una menorá con {{ . }} velas encendidas.'
